@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
@@ -73,12 +74,20 @@ const RegisterForm = () => {
 
         <button
           type="submit"
-          className="btn btn-neutral mt-4 w-full bg-amber-400 rounded-sm text-black"
+          className="btn bg-amber-400 hover:text-black w-full rounded-sm"
           disabled={loading}
         >
           {loading ? <span className="loading loading-dots"></span> : "Register"}
         </button>
+        
+      <p className="mt-3 text-sm text-center">
+  Already have an account?{" "}
+  <Link href="/login" className="text-blue-500 underline">
+    Login!
+  </Link>
+</p>
       </fieldset>
+
     </form>
   );
 };

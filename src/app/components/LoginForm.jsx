@@ -4,34 +4,35 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     const form = e.target;
-    const data = {
-      email: form.email.value,
-      password: form.password.value,
-    };
+    const email = form.email.value;
+    const password = form.password.value;
 
     try {
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+      const res = await signIn("credentials", {
+        redirect: false,
+        email,
+        password,
       });
 
-      const result = await res.json();
-      if (res.ok) {
+      if (res?.error) {
+        toast.error(res.error || "Invalid credentials");
+      } else {
         toast.success("Logged in successfully!");
         form.reset();
-        // You can redirect after login if needed
-      } else {
-        toast.error(result.error || "Invalid credentials");
+        // SPA redirect
+        router.push("/");
       }
     } catch (err) {
       console.error(err);
@@ -41,8 +42,22 @@ const LoginForm = () => {
     setLoading(false);
   };
 
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    try {
+      await signIn("google", { callbackUrl: "/" });
+    } catch (err) {
+      console.error(err);
+      toast.error("Google login failed");
+    }
+    setLoading(false);
+  };
+
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col items-center mt-6">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col items-center mt-6"
+    >
       <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
         <legend className="fieldset-legend text-lg md:text-xl">Login</legend>
 
@@ -72,9 +87,14 @@ const LoginForm = () => {
           {loading ? <span className="loading loading-dots"></span> : "Login"}
         </button>
 
-        <button type="button" className="btn bg-amber-400 hover:text-black w-full rounded-sm">
-            <FcGoogle size={24} /> Login with Google
-          </button>
+        <button
+          type="button"
+          onClick={handleGoogleLogin}
+          className="btn bg-amber-400 hover:text-black w-full rounded-sm mt-2 flex items-center justify-center gap-2"
+          disabled={loading}
+        >
+          <FcGoogle size={24} /> Login with Google
+        </button>
 
         <p className="mt-3 text-sm text-center">
           Don't have an account?{" "}
