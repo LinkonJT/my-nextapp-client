@@ -1,0 +1,83 @@
+[
+  {
+    "title": "Argentina Soccer Team",
+    "details": "Large wallpaper in Standard Matte Finish. Features the Argentina Soccer Team in action, perfect for football fans.",
+    "photoURL": "https://images.unsplash.com/photo-1596209949429-9b6068df436b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "sizeAvailable": "Small, Large",
+    "currentSize": "Large",
+    "printType": "Standard Matte Finish",
+    "price": 40
+  },
+  {
+    "title": "Team Brazil Soccer",
+    "details": "Medium wallpaper in Premium Glossy Vinyl. Showcasing the Brazil Soccer Team's energy on the field.",
+    "photoURL": "https://static01.nyt.com/images/2021/08/07/sports/07brazil-gold/merlin_192997824_7a2f3d1a-a5fd-47e1-8963-54b949a6664c-superJumbo.jpg",
+    "sizeAvailable": "Medium, Large",
+    "currentSize": "Medium",
+    "printType": "Premium Glossy Vinyl",
+    "price": 30
+  },
+  {
+    "title": "Lionel Messi",
+    "details": "Small wallpaper in Standard Matte Finish. Captures Messi’s signature style and skill.",
+    "photoURL": "https://images.unsplash.com/photo-1744124338043-ab0a848cf26b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "sizeAvailable": "Small, Medium",
+    "currentSize": "Small",
+    "printType": "Standard Matte Finish",
+    "price": 20
+  },
+  {
+    "title": "Cristiano Ronaldo",
+    "details": "Giant wallpaper in Premium Glossy Vinyl. Shows Ronaldo’s iconic moments on the pitch.",
+    "photoURL": "https://img.lemde.fr/2024/06/11/0/0/3475/2307/664/0/75/0/8992c6c_2024-06-11t205257z-42074297-up1ek6b1kq5dw-rtrmadp-3-soccer-friendly-por-irl-report.JPG",
+    "sizeAvailable": "Large, Giant",
+    "currentSize": "Giant",
+    "printType": "Premium Glossy Vinyl",
+    "price": 50
+  },
+  {
+    "title": "Brock Lesnar",
+    "details": "Large wallpaper in Standard Matte Finish. Perfect for WWE fans, featuring Brock Lesnar’s power.",
+    "photoURL": "https://www.thesun.co.uk/wp-content/uploads/2022/01/NINTCHDBPICT000703346041.jpg?strip=all&w=960",
+    "sizeAvailable": "Medium, Large",
+    "currentSize": "Large",
+    "printType": "Standard Matte Finish",
+    "price": 40
+  },
+  {
+    "title": "Undertaker",
+    "details": "Medium wallpaper in Premium Glossy Vinyl. Captures the Undertaker’s legendary WWE moments.",
+    "photoURL": "https://www.usatoday.com/gcdn/presto/2020/11/16/USAT/036e4c89-c412-4d33-bf64-76ab1d328902-WM34_04082018cm_03601.jpg?crop=2766,1556,x0,y260&width=660&height=371&format=pjpg&auto=webp",
+    "sizeAvailable": "Small, Medium",
+    "currentSize": "Medium",
+    "printType": "Premium Glossy Vinyl",
+    "price": 30
+  },
+  {
+    "title": "Bangladesh Cricket Team",
+    "details": "Small wallpaper in Standard Matte Finish. Celebrate Bangladesh Cricket Team’s glory moments.",
+    "photoURL": "https://wallpapers.com/images/hd/bangladesh-cricket-team-players-in-field-jf2er1vn0rg42hg5.jpg",
+    "sizeAvailable": "Small, Large",
+    "currentSize": "Small",
+    "printType": "Standard Matte Finish",
+    "price": 20
+  },
+{
+  "title": "Maria Sharapova",
+  "details": "Large wallpaper in Premium Glossy Vinyl. Showcasing Sharapova’s powerful tennis shots and elegance on the court.",
+  "photoURL": "https://www.tennisworldusa.org/imgb/98650/maria-sharapova-when-i-won-wimbledon-my-mother-was-.webp",
+  "sizeAvailable": "Medium, Large",
+  "currentSize": "Large",
+  "printType": "Premium Glossy Vinyl",
+  "price": 40
+},
+  {
+    "title": "Roger Federer",
+    "details": "Medium wallpaper in Standard Matte Finish. Highlights Federer’s graceful tennis strokes.",
+    "photoURL": "https://www.aljazeera.com/wp-content/uploads/2017/07/cd28577fd94a4783b02464b271ac7507_18.jpeg?resize=770%2C513&quality=80",
+    "sizeAvailable": "Small, Medium",
+    "currentSize": "Medium",
+    "printType": "Standard Matte Finish",
+    "price": 30
+  }
+]
