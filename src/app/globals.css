@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@plugin "daisyui";
+@import "swiper/css";
 
 :root {
   --background: #ffffff;
