@@ -46,10 +46,9 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Add Product</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center text-amber-400">Add Product</h1>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
-          <legend className="fieldset-legend">Page details</legend>
 
           <label className="label">Wallpaper Title</label>
           <input

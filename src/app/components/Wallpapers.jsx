@@ -22,10 +22,10 @@ const Wallpapers = () => {
   if (loading) return <span className="loading loading-dots loading-xl text-amber-400"></span>
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center mt-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center mt-5 mx-auto">
       {wallpapers.map((wallpaper, index) => (
         <div key={wallpaper._id} className="card bg-base-100 w-70 shadow-sm">
-          <figure className="h-48 overflow-hidden">
+          <figure className="h-50 overflow-hidden">
             <img
               src={wallpaper.photoURL}
               alt={wallpaper.title}

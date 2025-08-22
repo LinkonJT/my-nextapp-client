@@ -23,15 +23,15 @@ const DashboardLayout = ({ children }) => {
     <div>
       <div className="grid grid-cols-12 gap-4 w-full ">
         {/* sidebar */}
-        <div className="col-span-3 bg-gray-500 min-h-screen p-4">
+        <div className="col-span-3 bg-amber-300 min-h-screen p-4">
           <ul className="space-y-2">
-            <li className="hover:bg-gray-300 hover:text-blue-500 p-2 rounded">
+            <li className="hover:bg-amber-200 hover:text-black p-2 font-bold rounded">
               <Link href="/dashboard">User</Link>
             </li>
-            <li className="hover:bg-gray-300 hover:text-blue-500 p-2 rounded">
+            <li className="hover:bg-amber-200 hover:text-black p-2 font-bold rounded">
               <Link href="/products">Products</Link>
             </li>
-            <li className="hover:bg-gray-300 hover:text-blue-500 p-2 rounded">
+            <li className="hover:bg-amber-200 hover:text-black p-2 font-bold rounded">
               <Link href="/dashboard/add-products">Add Products</Link>
             </li>
           </ul>
