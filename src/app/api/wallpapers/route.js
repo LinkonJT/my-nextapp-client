@@ -10,3 +10,17 @@ export async function GET() {
     return new Response(JSON.stringify({ error: error.message }), { status: 500 });
   }
 }
+
+export async function POST(request) {
+  try {
+    const data = await request.json();
+    const wallpapersCollection = await dbConnect("wallpapersCollection");
+    const result = await wallpapersCollection.insertOne(data);
+
+    return new Response(JSON.stringify({ success: true, insertedId: result.insertedId }), {
+      status: 201,
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: error.message }), { status: 500 });
+  }
+}

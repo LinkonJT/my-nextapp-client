@@ -5,16 +5,44 @@ import { toast } from "react-toastify";
 const AddProduct = () => {
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    // Here you would normally call your API to add product
-    await new Promise((res) => setTimeout(res, 2000));
-
-    setLoading(false);
-    toast.success("Product added successfully!");
+  const form = e.target;
+  const data = {
+  title: form.title.value,
+  details: form.details.value,
+  photoURL: form.photoURL.value,
+  sizeAvailable: form.sizeAvailable.value,
+  currentSize: form.currentSize.value,
+  printType: form.printType.value,
+  price: parseInt(form.price.value),
   };
+
+  try {
+    const res = await fetch("/api/wallpapers", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+
+    if (res.ok) {
+      toast.success("Product added successfully!");
+      form.reset();
+    } else {
+      toast.error(result.error || "Something went wrong");
+    }
+  } catch (err) {
+    console.error(err);
+    toast.error("Something went wrong");
+  }
+
+  setLoading(false);
+};
+
 
   return (
     <div className="p-4">
@@ -26,6 +54,7 @@ const AddProduct = () => {
           <label className="label">Wallpaper Title</label>
           <input
             type="text"
+            name="title"
             className="input w-full"
             placeholder="Wallpaper title"
             required
@@ -35,19 +64,22 @@ const AddProduct = () => {
           <textarea
             placeholder="Details"
             className="textarea textarea-bordered w-full"
+            name="details"
             required
           ></textarea>
 
           <label className="label">Photo URL</label>
           <input
             type="url"
+            name="photoURL"
+            
             className="input input-bordered w-full"
             placeholder="https://example.com/wallpaper.jpg"
             required
           />
 
           <label className="label">Size Available</label>
-          <select defaultValue="" className="select w-full" required>
+          <select defaultValue="" name="sizeAvailable"  className="select w-full" required>
             <option disabled value="">
               Pick available sizes
             </option>
@@ -59,7 +91,7 @@ const AddProduct = () => {
           </select>
 
           <label className="label">Pick Current Size</label>
-          <select defaultValue="" className="select w-full" required>
+          <select defaultValue="" name="currentSize" className="select w-full" required>
             <option disabled value="">
               Pick a size
             </option>
@@ -70,7 +102,7 @@ const AddProduct = () => {
           </select>
 
           <label className="label">Print Type</label>
-          <select defaultValue="" className="select w-full" required>
+          <select defaultValue="" name="printType" className="select w-full" required>
             <option disabled value="">
               Pick a print type
             </option>
@@ -79,7 +111,7 @@ const AddProduct = () => {
           </select>
 
           <label className="label">Price ($)</label>
-          <select defaultValue="" className="select w-full" required>
+          <select defaultValue="" name="price" className="select w-full" required>
             <option disabled value="">
               Pick a price
             </option>
