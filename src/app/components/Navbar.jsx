@@ -44,7 +44,7 @@ const Navbar = () => {
             <span className="hidden sm:inline"> {session.user?.name || session.user?.email}</span>
             <button
               onClick={() => signOut({ callbackUrl: "/" })}
-              className="btn bg-amber-400 hover:text-black rounded-sm"
+              className="btn btn-sm md:btn-md  bg-amber-400 hover:text-black rounded-sm"
             >
               LogOut
             </button>
@@ -52,7 +52,7 @@ const Navbar = () => {
         ) : (
           <Link
             href="/login"
-            className="btn bg-amber-400 hover:text-black rounded-sm"
+            className="btn btn-sm md:btn-md  bg-amber-400 hover:text-black rounded-md"
           >
             LogIn
           </Link>

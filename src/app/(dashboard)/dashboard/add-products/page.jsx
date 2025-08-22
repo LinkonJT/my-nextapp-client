@@ -123,7 +123,7 @@ const handleSubmit = async (e) => {
 
         <button
           type="submit"
-          className="btn rounded-md bg-amber-300 text-black"
+          className="btn btn-sm md:btn-md rounded-md bg-amber-400 hover:text-black"
           disabled={loading}
         >
           {loading ? <span className="loading loading-dots"></span> : "Add Product"}

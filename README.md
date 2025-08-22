@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WallScape - Wallpaper Selling Website
 
-## Getting Started
+## Project Description
+WallScape is a modern wallpaper-selling platform built using **Next.js**. Users can browse and purchase high-quality wallpapers of athletes, celebrities, and popular figures. Wallpapers are available in **four different sizes** with varied price ranges starting from **$20**. The platform includes a **protected dashboard** for logged-in users, where they can manage purchases and access exclusive features.
 
-First, run the development server:
+Key Features:
+- Browse wallpapers by category and sport
+- Multiple sizes and print options
+- Protected dashboard for registered users
+- Login and registration with **NextAuth**
+- Responsive design with modern UI
 
+## Tech Stack
+- **Frontend & Backend:** Next.js 13 (App Router)
+- **Authentication:** NextAuth.js
+- **Database:** MongoDB (storing users and wallpapers)
+- **UI:** Tailwind CSS & DaisyUI / Flowbite
+- **Client-side:** React, React Hooks
+- **Notifications:** react-toastify
+- **Deployment:** Vercel
+
+## Setup & Installation
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone https://github.com/LinkonJT/my-nextapp-client.git
+cd my-nextapp-client
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Install dependencies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm install
 
-## Learn More
+# Set environment variables
+# Create a .env file in the root directory and add:
+DB_NAME=yourDBName
+DB_USER=yourDBUser
+DB_PASS=yourDBPassword
+NEXTAUTH_URL=https://my-nextapp-client.vercel.app
+NEXTAUTH_SECRET=your_random_secure_string
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Run locally
+Run locally
+Your app will be available at http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deployment
+Push your repository to GitHub
+Connect the repo in Vercel
+Add the same environment variables in Vercel project settings
+Deploy the project
 
-## Deploy on Vercel
+| Route                     | Method     | Description                                               |
+| ------------------------- | ---------- | --------------------------------------------------------- |
+| `/`                       | GET        | Home page                                                 |
+| `/products`               | GET        | List all wallpapers                                       |
+| `/products/[id]`          | GET        | View wallpaper details                                    |
+| `/login`                  | GET / POST | Login page using NextAuth credentials                     |
+| `/register`               | GET / POST | Register new users                                        |
+| `/dashboard`              | GET        | Protected user dashboard (logged-in users only)           |
+| `/dashboard/add-products` | GET / POST | Add new wallpaper (admin functionality if implemented)    |
+| `/api/auth/[...nextauth]` | GET / POST | NextAuth API routes for authentication                    |
+| `/api/wallpapers`         | GET        | Fetch all wallpapers                                      |
+| `/api/auth/register`      | POST       | Register new users                                        |
+| `/api/auth/login`         | POST       | Custom login endpoint (if used with credentials provider) |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Notes
+
+Users need to be logged in to access the dashboard.
+
+Wallpapers can have different sizes and print types, each with its own price.
+
+NextAuth is used for authentication without JWT for now, with optional Google login.
+
+Database seeding can be done manually or with a script using the JSON wallpapers data.
+
+Links
+
+GitHub Repository: https://github.com/LinkonJT/my-nextapp-client
+
+Live Site (Vercel): https://my-nextapp-client.vercel.app/
